@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7f7f7;
+  margin-top: 3.75rem;
+  display: grid;
+  gap: 3.75rem;
+  justify-items: center;
+}
+
+.header {
+  display: grid;
+  justify-items: center;
+  gap: 3.75rem;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.menu-button {
+  text-transform: uppercase;
+  color: #000;
+  background-color: #fff;
+  padding: 0.775rem 1.675rem;
+  border: 0.2rem solid transparent;
+  border-radius: 0.25rem;
+  display: block;
+}
+
+.menu-button:hover {
+  border: 0.2rem solid #e21;
+}
+
+.main {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr;
+  max-width: 62.5rem; */
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+}
+
+.intro-text {
+  background-color: #fff;
+  text-align: end;
+  padding: 2.5rem;
+  display: grid;
+  gap: 1.25rem;
+  align-content: center;
+  justify-items: end;
+  position: relative;
+}
+
+#intro-title {
+  font-size: 2rem;
+}
+
+#intro-title::before{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 30px;
+  right: -30px;
+  background-color: #e21;
+  height: 4px;
+  width: 60px;
+}
+
+.intro-info {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  max-width: 60ch;
+}
+
+.intro-button {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #e21;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.9375rem 1.875rem;
+}
+
+.intro-button:hover {
+  background-color: #900;
+}
+
+.intro-img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#about-title {
+  text-transform: uppercase;
+  color: #c6c6c6;
+  text-align: end;
+  align-self: center;
+  font-size: 4.0625rem;
+  padding: 40px;
+  background-image: url(./arq/onda.svg);
+}
+
+.about-info {
+  background-color: #fff;
+  padding: 2.5rem;
+  box-sizing: border-box;
+}
+
+.vantagens{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.625rem 1.25rem;
+  padding: 1.25rem;
+  /* na hora de diminuir a tela o grid tava desencaixando, as vantagens ficavam menores que a foto da bike e tive que colocar o min-width para que ficasse na mesma linha e o box-sizing para evitar que tudo oq estava acima das vantagens se mexesse com o hover das vantagens */
+  box-sizing: border-box;
+  
+}
+
+.about-info .vantagens:nth-child(odd){
+  background-color: #f7f7f7;
+}
+
+.vantagens:hover{
+border-left: 0.2rem solid #e21;
+}
+
+.vantagens-info{
+  grid-column: 2 / 3;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.footer{
+  background-color: #fff;
+  font-size: 1.25rem;
+  width: 100%;
+  text-align: center;
+  padding: 2.5rem;
+  box-sizing: border-box;
+}
+
+@media(max-width: 878px){
+  body{
+    margin-top: 3rem;
+    gap: 2rem;
+  }
+  .header{
+    gap: 1.5rem;
+  }
+
+  #intro-title::before{
+    display: none;
+  }
+
+  .main{
+  grid-template-columns: 1fr;
+  }
+}
