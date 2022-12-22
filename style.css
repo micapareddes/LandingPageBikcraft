@@ -1,3 +1,26 @@
+:root{
+  --background-body: #f7f7f7;
+  --background-white: #fff;
+  --text: #000000;
+  --color: #e21;
+  --color-hoover: #900;
+  --title: #c6c6c6;
+  --onda: url(./arq/onda.svg);
+}
+
+ @media(prefers-color-scheme: dark){
+  :root{
+    --background-body: #0a0a0a;
+    --background-white: rgb(0, 0, 0);
+    --color: #e21;
+    --color-hoover: #900;
+    --title: #131313;
+  --onda: url(./arq/onda\ dark.svg);  
+  --text: #fff;
+
+  }
+} 
+
 * {
   margin: 0;
   padding: 0;
@@ -7,11 +30,12 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f7f7f7;
+  background-color: var(--background-body);
   margin-top: 3.75rem;
   display: grid;
   gap: 3.75rem;
   justify-items: center;
+  color: var(--text);
 }
 
 .header {
@@ -29,8 +53,8 @@ body {
 
 .menu-button {
   text-transform: uppercase;
-  color: #000;
-  background-color: #fff;
+  color: var(--text);
+  background-color: var(--background-white);
   padding: 0.775rem 1.675rem;
   border: 0.2rem solid transparent;
   border-radius: 0.25rem;
@@ -38,7 +62,7 @@ body {
 }
 
 .menu-button:hover {
-  border: 0.2rem solid #e21;
+  border: 0.2rem solid var(--color);
 }
 
 .main {
@@ -49,7 +73,7 @@ body {
 }
 
 .intro-text {
-  background-color: #fff;
+  background-color: var(--background-white);
   text-align: end;
   padding: 2.5rem;
   display: grid;
@@ -69,7 +93,7 @@ body {
   position: absolute;
   top: 30px;
   right: -30px;
-  background-color: #e21;
+  background-color: var(--color);
   height: 4px;
   width: 60px;
 }
@@ -82,15 +106,15 @@ body {
 
 .intro-button {
   text-transform: uppercase;
-  color: #fff;
-  background-color: #e21;
+  color: var(--background-white);
+  background-color: var(--color);
   border: none;
   border-radius: 0.25rem;
   padding: 0.9375rem 1.875rem;
 }
 
 .intro-button:hover {
-  background-color: #900;
+  background-color: var(--color-hoover);
 }
 
 .intro-img {
@@ -102,16 +126,16 @@ body {
 
 #about-title {
   text-transform: uppercase;
-  color: #c6c6c6;
+  color: var(--title);
   text-align: end;
   align-self: center;
   font-size: 4.0625rem;
   padding: 40px;
-  background-image: url(./arq/onda.svg);
+  background-image: var(--onda);
 }
 
 .about-info {
-  background-color: #fff;
+  background-color: var(--background-white);
   padding: 2.5rem;
   box-sizing: border-box;
 }
@@ -127,11 +151,11 @@ body {
 }
 
 .about-info .vantagens:nth-child(odd){
-  background-color: #f7f7f7;
+  background-color: var(--background-body);
 }
 
 .vantagens:hover{
-border-left: 0.2rem solid #e21;
+border-left: 0.2rem solid var(--color);
 }
 
 .vantagens-info{
@@ -141,7 +165,7 @@ border-left: 0.2rem solid #e21;
 }
 
 .footer{
-  background-color: #fff;
+  background-color: var(--background-white);
   font-size: 1.25rem;
   width: 100%;
   text-align: center;
